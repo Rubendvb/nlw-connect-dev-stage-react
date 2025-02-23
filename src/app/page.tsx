@@ -1,7 +1,13 @@
+import { Button } from '@/components/button'
+
 export default function Home() {
   return (
     <main>
-      <div>Hello world!</div>
+      <h1>Hello world!</h1>
+
+      <Button text="Ruben" />
+      <Button text="Karli" />
+      <Button />
     </main>
-  );
+  )
 }
