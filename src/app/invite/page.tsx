@@ -1,12 +1,10 @@
 import Image from 'next/image'
-import { BadgeCheck, Copy, Link, Medal, MousePointerClick } from 'lucide-react'
 
-import { InputField, InputIcon, InputRoot } from '@/components/input'
-import { IconButton } from '@/components/icon-button'
+import { Ranking } from './ranking'
+
 import logo from '../../assets/logo.svg'
-import gold from '../../assets/medal-gold.svg'
-import silver from '../../assets/medal-silver.svg'
-import cooper from '../../assets/medal-cooper.svg'
+import { Stats } from './stats'
+import InviteLinkInput from './invite-link-input'
 
 export default function InvatePage() {
   return (
@@ -37,101 +35,13 @@ export default function InvatePage() {
             </p>
           </div>
 
-          <InputRoot>
-            <InputIcon>
-              <Link className="size-5" />
-            </InputIcon>
+          <InviteLinkInput />
 
-            <InputField
-              readOnly
-              defaultValue="http://localhost:3000/invite/56454132165"
-            />
-
-            <IconButton className="-mr-2">
-              <Copy className="size-5" />
-            </IconButton>
-          </InputRoot>
-
-          <div className="grid gap-3 md:grid-cols-3">
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center justify-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                1024
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Acessos ao link
-              </span>
-
-              <MousePointerClick className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center justify-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                875
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Inscrições feitas
-              </span>
-
-              <BadgeCheck className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center justify-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                3°
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Posição no ranking
-              </span>
-
-              <Medal className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-          </div>
+          <Stats />
         </div>
       </div>
 
-      <div className="w-full max-w-[440px] space-y-5">
-        <h2 className="text-gray-200 text-xl font-heading font-semibold leading-none">
-          Ranking de indicações
-        </h2>
-
-        <div className="space-y-4">
-          <div className="relative bg-gray-700 rounded-xl border border-gray-600 p-6 flex flex-col justify-center gap-3">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">1°</span> | Rubén Vásquez
-            </span>
-
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              1030
-            </span>
-
-            <Image src={gold} alt="" className="absolute top-0 right-6" />
-          </div>
-
-          <div className="relative bg-gray-700 rounded-xl border border-gray-600 p-6 flex flex-col justify-center gap-3">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">2°</span> | Rubén Vásquez
-            </span>
-
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              1030
-            </span>
-
-            <Image src={silver} alt="" className="absolute top-0 right-6" />
-          </div>
-
-          <div className="relative bg-gray-700 rounded-xl border border-gray-600 p-6 flex flex-col justify-center gap-3">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">3°</span> | Rubén Vásquez
-            </span>
-
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              1030
-            </span>
-
-            <Image src={cooper} alt="" className="absolute top-0 right-6" />
-          </div>
-        </div>
-      </div>
+      <Ranking />
     </div>
   )
 }
