@@ -7,6 +7,8 @@ import { Stats } from './stats'
 import InviteLinkInput from './invite-link-input'
 
 export default function InvatePage() {
+  const inviteLink = 'http://localhost:3000/invite/lalalalala'
+
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
       <div className="flex flex-col gap-10 w-full max-w-[550px]">
@@ -35,7 +37,7 @@ export default function InvatePage() {
             </p>
           </div>
 
-          <InviteLinkInput />
+          <InviteLinkInput inviteLink={inviteLink} />
 
           <Stats />
         </div>
